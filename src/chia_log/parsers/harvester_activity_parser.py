@@ -51,7 +51,7 @@ class HarvesterActivityParser:
                     timestamp=dateutil_parser.parse(match[0]),
                     eligible_plots_count=int(match[1]),
                     challenge_hash=match[2],
-                    found_proofs_count=0,
+                    found_proofs_count=int(match[3]),
                     search_time_seconds=float(match[4]),
                     total_plots_count=int(match[5]),
                 )
