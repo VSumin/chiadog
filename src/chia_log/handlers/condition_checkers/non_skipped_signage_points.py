@@ -34,13 +34,13 @@ class NonSkippedSignagePoints(FinishedSignageConditionChecker):
         if not valid:
             return None
 
-        # To reduce notification spam, only send notifications for skips larger than 1
+        # To reduce notification spam, only send notifications for skips larger than 9
         if skipped == 1:
             logging.info(
                 f"Detected {skipped} skipped signage point."
                 "This is expected to happen occasionally and not a reason for concern."
             )
-        elif skipped >= 2:
+        elif skipped >= 10:
             message = f"Experiencing networking issues? Skipped {skipped} signage points!"
             logging.warning(message)
             event = Event(
